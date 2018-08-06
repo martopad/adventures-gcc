@@ -1,4 +1,4 @@
     # exclude everything except directory foo/bar
     #BOOSTEXPERIMENTS/*
-    *.out
-    settings.json
+    a.out
+    .vscode/settings.json
