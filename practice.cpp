@@ -1,11 +1,55 @@
-// regex_match example
 #include <iostream>
 #include <string>
 #include <regex>
+#include <chrono>
+#include <sstream>
+#include <iomanip>
+#include <map>
+
+std::string return_current_time_and_date()
+{
+    auto now = std::chrono::system_clock::now();
+    auto in_time_t = std::chrono::system_clock::to_time_t(now);
+
+    std::stringstream ss;
+    ss << std::put_time(std::localtime(&in_time_t), "%Y-%m-%d %X");
+    return ss.str();
+}
 
 int main ()
 {
+  int tm_mday;  // day of month from 1 to 31
+  int tm_mon;   // month of year from 0 to 11
+  int tm_year;  // year since 1900
 
+  int quantity;
+  std::string nameoflate;
+  std::cout << "How many are late today?" << std::endl;
+  std::cin >> quantity;
+  std::string lates[quantity]  = {""};
+
+  for(int currentlate = 0; currentlate < quantity; ++currentlate)
+  {
+      std::cout << "Please enter the name of the " << currentlate+1 << " out of " << quantity << " late today" << std::endl;
+      std::cin >> nameoflate;
+      lates[currentlate] = nameoflate;
+  }
+
+  std::cout << "The lates are: " << std::endl;
+
+  for(auto element : lates)
+  {
+    std::cout << element << std::endl;
+  }
+
+  std::cout << return_current_time_and_date() << std::endl;
+
+
+
+
+
+
+  /*
   if (std::regex_match ("subject", std::regex("(sub)(.*)") ))
     std::cout << "string literal matched\n";
 
@@ -39,6 +83,6 @@ int main ()
   }
 
   std::cout << std::endl;
-
+  */
   return 0;
 }
