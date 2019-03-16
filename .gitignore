@@ -2,4 +2,4 @@
     #BOOSTEXPERIMENTS/*
     a.out
     .vscode/settings.json
-    build**/
+    build**\
