@@ -1,6 +1,9 @@
 [requires]
+boost/1.64.0@conan/stable
+#cmake_installer/3.0.2@conan/stable
+
 fmt/4.1.0@bincrafters/stable
-boost/1.69.0@conan/stable
+protobuf/3.3.0@bincrafters/stable
 
 [generators]
 cmake
